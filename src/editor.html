@@ -917,7 +917,7 @@
 				whenPastingInsertAsPlainText('zss_editor_title');
 				whenPastingInsertAsPlainText('zss_editor_content');
 
-				zss_editor.focusTitle();
+				zss_editor.focusContent();
 
 				setTimeout(function() {
 					WebViewBridge.send(JSON.stringify({type: 'ZSS_INITIALIZED'}))
@@ -1663,8 +1663,8 @@
 			}
 
 			body {
-				padding-left:10px;
-				padding-right:10px;
+				padding-left:0px;
+				padding-right:0px;
 				padding-top: 0px;
 				padding-bottom: 0px;
 				overflow-y: scroll;
@@ -1698,8 +1698,8 @@
 			}
 
 			#zss_editor_content {
-				padding-left: 10px;
-				padding-right: 10px;
+				padding-left: 0;
+				padding-right: 0;
 			}
 
 			div.zss_editor_title {
