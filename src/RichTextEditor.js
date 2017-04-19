@@ -89,7 +89,7 @@ export default class RichTextEditor extends Component {
     const spacing = marginTop + marginBottom + top + bottom;
 
     const editorAvailableHeight = Dimensions.get('window').height - keyboardHeight - spacing;
-    this.setEditorHeight(editorAvailableHeight);
+    this.setEditorHeight(editorAvailableHeight - 80);
   }
 
   onBridgeMessage(str){

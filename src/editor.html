@@ -1349,7 +1349,7 @@
 
 			zss_editor.insertImage = function(attributes) {
 				zss_editor.restorerange();
-				var imageContainer = $('<div><img></div>');
+				var imageContainer = $('<div><img/><div class="caption">Image caption...</div><br></div>');
 				imageContainer.find('img').attr(attributes);
 				zss_editor.insertHTML('<br>' + imageContainer.html() + '<br>');
 				zss_editor.enabledEditingItems();
