@@ -36,6 +36,7 @@ export default class RichTextToolbar extends Component {
     unselectedButtonStyle: PropTypes.object,
     renderAction: PropTypes.func,
     iconMap: PropTypes.object,
+    selectedIconColor: PropTypes.any
   };
 
   constructor(props) {
@@ -99,7 +100,9 @@ export default class RichTextToolbar extends Component {
   }
 
   _defaultRenderAction(action, selected) {
-    const icon = this._getButtonIcon(action);
+    const Icon = this._getButtonIcon(action);
+    const isString = typeof Icon === 'string';
+    console.log('selectedIconColor', this.props.selectedIconColor)
     return (
       <TouchableOpacity
           key={action}
@@ -109,7 +112,16 @@ export default class RichTextToolbar extends Component {
           ]}
           onPress={() => this._onPress(action)}
       >
-        {icon ? <Image source={icon} style={{tintColor: selected ? this.props.selectedIconTint : this.props.iconTint}}/> : null}
+        {React.isValidElement(Icon) ?
+          React.cloneElement(Icon, {
+            style: {
+              tintColor: selected ? this.props.selectedIconTint : this.props.iconTint
+            },
+            color: selected ? this.props.selectedIconColor : null
+          })
+          :
+          <Image source={Icon} style={{tintColor: selected ? this.props.selectedIconTint : this.props.iconTint}}/>
+        }
       </TouchableOpacity>
     );
   }
