@@ -1355,8 +1355,9 @@
 				zss_editor.enabledEditingItems();
 			}
 
-			zss_editor.insertVideo = function(videoAttributes, sourceAttributes) {
-
+			zss_editor.insertVideo = function(attrs) {
+				var videoAttributes = attrs.videoAttributes
+				var sourceAttributes = attrs.sourceAttributes
 				zss_editor.restorerange();
 				var videoContainer = $('<div><video><source/></video><div class="caption">Image caption...</div><br></div>');
 				videoContainer.find('video').attr(videoAttributes);

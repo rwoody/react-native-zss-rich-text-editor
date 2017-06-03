@@ -30,6 +30,7 @@ export default class RichTextToolbar extends Component {
     actions: PropTypes.array,
     onPressAddLink: PropTypes.func,
     onPressAddImage: PropTypes.func,
+    onPressAddVideo: PropTypes.func,
     selectedButtonStyle: PropTypes.object,
     iconTint: PropTypes.any,
     selectedIconTint: PropTypes.any,
