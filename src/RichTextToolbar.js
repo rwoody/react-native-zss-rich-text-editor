@@ -184,6 +184,12 @@ export default class RichTextToolbar extends Component {
           });
         }
         break;
+      case actions.insertVideo:
+        this.state.editor.prepareInsert();
+        if(this.props.onPressAddVideo) {
+          this.props.onPressAddVideo();
+        }
+        break;
       case actions.insertImage:
         this.state.editor.prepareInsert();
         if(this.props.onPressAddImage) {

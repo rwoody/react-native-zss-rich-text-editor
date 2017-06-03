@@ -467,6 +467,11 @@ export default class RichTextEditor extends Component {
     this.prepareInsert(); //This must be called BEFORE insertImage. But WebViewBridge uses a stack :/
   }
 
+  insertVideo(attributes) {
+    this._sendAction(actions.insertVideo, attributes);
+    this.prepareInsert(); //This must be called BEFORE insertVideo. But WebViewBridge uses a stack :/
+  }
+
   setSubscript() {
     this._sendAction(actions.setSubscript);
   }

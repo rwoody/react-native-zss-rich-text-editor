@@ -1355,6 +1355,16 @@
 				zss_editor.enabledEditingItems();
 			}
 
+			zss_editor.insertVideo = function(videoAttributes, sourceAttributes) {
+
+				zss_editor.restorerange();
+				var videoContainer = $('<div><video><source/></video><div class="caption">Image caption...</div><br></div>');
+				videoContainer.find('video').attr(videoAttributes);
+				videoContainer.find('source').attr(sourceAttributes);
+				zss_editor.insertHTML('<br>' + videoContainer.html() + '<br>');
+				zss_editor.enabledEditingItems();
+			}
+
 			zss_editor.insertImageBase64String = function(imageBase64String, alt) {
 				zss_editor.restorerange();
 				var html = '<img src="data:image/jpeg;base64,'+encodeHtmlEntities(imageBase64String)+'" alt="'+encodeHtmlEntities(alt)+'" />';
