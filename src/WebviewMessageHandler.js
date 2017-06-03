@@ -92,7 +92,7 @@ export const InjectedMessageHandler = `
           zss_editor.insertImage(action.data);
           break;
         case '${actions.insertVideo}':
-          zss_editor.insertImage(action.data);
+          zss_editor.insertVideo(action.data);
           break;
         case '${actions.setSubscript}':
           zss_editor.setSubscript();
