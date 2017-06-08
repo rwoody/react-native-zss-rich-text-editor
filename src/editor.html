@@ -902,11 +902,11 @@
 				$(window).on('touchstart', function(e) {
 					zss_editor.isDragging = false;
 				});
-				$(window).on('scroll', function(e) {
-					if (zss_editor.platform === 'ios') {
-						zss_editor.updateOffset();
-					}
-				});
+				// $(window).on('scroll', function(e) {
+				// 	if (zss_editor.platform === 'ios') {
+				// 		zss_editor.updateOffset();
+				// 	}
+				// });
 
 				setupTouchEndFocus('zss_editor_title');
 				setupTouchEndFocus('zss_editor_content');
