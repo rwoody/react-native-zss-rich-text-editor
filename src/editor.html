@@ -1349,9 +1349,9 @@
 
 			zss_editor.insertImage = function(attributes) {
 				zss_editor.restorerange();
-				var imageContainer = $('<div><img/><div class="caption">Image caption...</div><br></div>');
+				var imageContainer = $('<div class="content-image"><img/></div><p class="caption">Image caption...</p>');
 				imageContainer.find('img').attr(attributes);
-				zss_editor.insertHTML('<br>' + imageContainer.html() + '<br>');
+				zss_editor.insertHTML(imageContainer.html());
 				zss_editor.enabledEditingItems();
 			}
 
@@ -1359,10 +1359,10 @@
 				var videoAttributes = attrs.videoAttributes
 				var sourceAttributes = attrs.sourceAttributes
 				zss_editor.restorerange();
-				var videoContainer = $('<div><video><source/></video><div class="caption">Image caption...</div><br></div>');
+				var videoContainer = $('<div class="content-video"><video><source/></video></div><p class="caption">Video caption...</p>');
 				videoContainer.find('video').attr(videoAttributes);
 				videoContainer.find('source').attr(sourceAttributes);
-				zss_editor.insertHTML('<br>' + videoContainer.html() + '<br>');
+				zss_editor.insertHTML(videoContainer.html());
 				zss_editor.enabledEditingItems();
 			}
 
