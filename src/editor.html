@@ -1351,7 +1351,7 @@
 				zss_editor.restorerange();
 				var imageContainer = $('<div class="content-image"><img/><p class="caption">Image caption...</p></div>');
 				imageContainer.find('img').attr(attributes);
-				zss_editor.insertHTML(imageContainer.html());
+				zss_editor.insertHTML(imageContainer.html() + '<br/><br/>');
 				zss_editor.enabledEditingItems();
 			}
 
@@ -1362,7 +1362,7 @@
 				var videoContainer = $('<div class="content-video"><video><source/></video><p class="caption">Video caption...</p></div>');
 				videoContainer.find('video').attr(videoAttributes);
 				videoContainer.find('source').attr(sourceAttributes);
-				zss_editor.insertHTML(videoContainer.html());
+				zss_editor.insertHTML(videoContainer.html() + '<br/><br/>');
 				zss_editor.enabledEditingItems();
 			}
 
